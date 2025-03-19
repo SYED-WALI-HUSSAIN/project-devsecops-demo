@@ -1,7 +1,7 @@
 # Build stage
-FROM alpine:latest AS build
+FROM node:20-alpine AS build
 WORKDIR /app
-RUN apk update && apk upgrade --no-cache libexpat libxml2 libxslt   
+RUN apk update && apk upgrade --no-cache libexpat libxml2 libxslt 
 COPY package*.json ./
 RUN npm ci
 COPY . .

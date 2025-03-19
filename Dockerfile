@@ -1,6 +1,7 @@
 # Build stage
 FROM node:20-alpine AS build
 WORKDIR /app
+RUN apt update && apt upgrade libexpat libxml2 libxslt
 COPY package*.json ./
 RUN npm ci
 COPY . .

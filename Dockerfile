@@ -1,5 +1,5 @@
 # Build stage
-FROM node:20-alpine AS build
+FROM alpine:latest AS build
 WORKDIR /app
 RUN apt update && apt install -y --only-upgrade libexpat1 libxml2 libxslt1.1
 COPY package*.json ./

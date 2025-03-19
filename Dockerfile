@@ -1,7 +1,7 @@
 # Build stage
 FROM alpine:latest AS build
 WORKDIR /app
-RUN apt update && apt install -y --only-upgrade libexpat1 libxml2 libxslt1.1
+RUN apk update && apk upgrade --no-cache libexpat libxml2 libxslt   
 COPY package*.json ./
 RUN npm ci
 COPY . .
